@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class WaterRegEx2 {
+
+    //instantiate variables
+    private Scanner input = new Scanner(System.in);
+    private String waterID;
+    private String waterAge;
+    private boolean hasMineral;
+    private boolean isLiquid;
+    private String name;
+
+    public WaterRegEx2()
+    {
+        waterID ="";
+        waterAge = "";
+        hasMineral = false;
+        isLiquid = false;
+        name = "";
+    }
+
+    public void setWaterID(String waterID) {
+        this.waterID = waterID;
+    }
+
+    public String getWaterID() {
+        return waterID;
+    }
+
+    public void setWaterAge(String waterAge) {
+        this.waterAge = waterAge;
+    }
+
+    public String getWaterAge() {
+        return waterAge;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void validateInfo()
+    {
+        System.out.println("Please Enter Your 6 Digit Water ID: ");
+        input.next();
+        // this line is "[0-9] will check for only integers while {6} checks to see if it is 6 in length
+        while(!waterID.matches("[0-9]{6}"))
+        {
+            System.out.println("Please Retype Your 6 Digit Water ID: ");
+            waterID = input.next();
+        }//this while loop will make sure that the 6 digit water ID is 6 digits in length and only integers
+
+        System.out.println("Please Enter The Name of Your Water: ");
+        input.next();
+
+        while(!name.matches("[a-z][A-Z]"))
+        {
+            System.out.println("Please Retype The Water Name: ");
+            waterID = input.next();
+        }//this while loop willmake sure that the water name is a proper name with only characters from the alphabet
+
+        System.out.println("Thank You For Entering Your Information");
+    }//end validate info method
+
+    @Override
+    public String toString(){
+        return "WaterRegEx2{" +
+                "waterID='" + waterID + '\'' +
+                ", waterAge=" + waterAge +
+                ", hasMineral=" + hasMineral +
+                ", isLiquid=" + isLiquid +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+}
