@@ -20,6 +20,44 @@ class WaterRegEx2Test {
         test.validateInfo();
     }
 
+    @Test
+    void is0asdf0123456ssbValidID(){
+        WaterRegEx2 test = new WaterRegEx2();
+        test.setWaterID("0asdf0123456ssb");
+        test.setName("test");
+        test.validateInfo();
+    }
+
+    @Test
+    void is0asdf012345ssbValidNameAndID(){
+        WaterRegEx2 test = new WaterRegEx2();
+        test.setWaterID("0asdf012345ssb");
+        test.setName("19hello");
+        test.validateInfo();
+    }
+
+    @Test
+    void is1234567890ValidWaterAge(){
+        WaterRegEx2 test = new WaterRegEx2();
+        test.setWaterID("000000");
+        test.setName("test");
+        test.setWaterAge("1234567890");
+        test.validateInfo();
+    }
+
+    @Test
+    void is12345678901234ValidWaterAge(){
+        WaterRegEx2 test = new WaterRegEx2();
+        test.setWaterID("000000");
+        test.setName("test");
+        test.setWaterAge("12345678901234");
+        test.validateInfo();
+    }
+
+
+
+
+
 
 //    @Test
 //    void setWaterID() {

@@ -52,13 +52,25 @@ public class WaterRegEx2 {
             System.out.println("Invalid ID");
         }//this while loop will make sure that the 6 digit water ID is 6 digits in length and only integers
 
-        if(!name.matches("[a-z][A-Z]"))
+        if(!name.matches("([a-zA-Z])+"))
         {
             System.out.println("Invalid Name ");
         }//this while loop willmake sure that the water name is a proper name with only characters from the alphabet
 
+        if(!waterAge.matches("[0-9]{0,10}]"))
+        {
+            System.out.println("Invalid Age");
+        }
         System.out.println("Thank You For Entering Your Information");
     }//end validate info method
+
+    public void isWaterPresent(String random)
+    {
+        if(random.matches("[a-z]]"))
+        {
+            System.out.println("The word water is present in the string, disregarding any characters in between the characters of water");
+        }
+    }
 
     @Override
     public String toString(){
