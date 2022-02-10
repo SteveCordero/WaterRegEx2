@@ -54,6 +54,15 @@ class WaterRegEx2Test {
         test.validateInfo();
     }
 
+    @Test
+    void is12ValidWaterAge(){
+        WaterRegEx2 test = new WaterRegEx2();
+        test.setWaterID("000000");
+        test.setName("test");
+        test.setWaterAge("12");
+        test.validateInfo();
+    }
+
 
 
 

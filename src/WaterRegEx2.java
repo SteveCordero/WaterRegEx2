@@ -57,7 +57,7 @@ public class WaterRegEx2 {
             System.out.println("Invalid Name ");
         }//this while loop willmake sure that the water name is a proper name with only characters from the alphabet
 
-        if(!waterAge.matches("[0-9]{0,10}]"))
+        if(!waterAge.matches("([0-9]){0,10}"))
         {
             System.out.println("Invalid Age");
         }
@@ -66,9 +66,12 @@ public class WaterRegEx2 {
 
     public void isWaterPresent(String random)
     {
-        if(random.matches("[a-z]]"))
+        if(random.matches("[w]{1}"))
         {
             System.out.println("The word water is present in the string, disregarding any characters in between the characters of water");
+
+            //(w){1}[^w]{0,}(a){1}([^w][^a]){0,}(t){1}([^w][^a][^t]){0,}(e){1}([^w][^a][^t][^e]){0,}
+            //(w){1}[^water]{0,}(a){1}([^water]){0,}(t){1}([^water]){0,}(e){1}([water]){0,}
         }
     }
 
